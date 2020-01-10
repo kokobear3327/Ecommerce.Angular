@@ -3,10 +3,9 @@ import { CoursesComponent } from './components/courses/courses.component';
 
 @NgModule({
   declarations: [CoursesComponent],
-  imports: [
-
-  ],
+  imports: [],
   providers: [],
   bootstrap: []
 })
+
 export class AppModuleCourses { }

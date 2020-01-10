@@ -2,22 +2,33 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link active" [routerLink]="'/'">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Courses</a>
+        <a class="nav-link" [routerLink]="'/courses'">Courses</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Login</a>
+        <a class="nav-link disabled" [routerLink]="'/login'" tabindex="-1" aria-disabled="true">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" [routerLink]="'/about'">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Cart</a>
+        <a class="nav-link">Cart</a>
       </li>
     </ul>
   </div>
+  <!-- ToDo: Make this not render if courses is selected/active using ngIf (why commonModule was imported)-->
   <div class="card-body">
     <h5 class="card-title">Here is a title</h5>
     <p class="card-text">Here is some text to explain something.  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, quasi ex? Nobis officia ullam quis aut enim! Dolor saepe in quidem non ad autem assumenda unde suscipit. Id, cupiditate fugit? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae ratione magnam alias obcaecati eaque nisi, dolor expedita quasi quo incidunt laboriosam, ullam ea praesentium a quos nam commodi quod fugit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ipsam minus illum vero quis. Culpa repellat, non hic ea totam, explicabo qui incidunt ad officiis placeat quas at? Excepturi, ut.</p>
