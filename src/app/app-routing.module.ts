@@ -8,19 +8,19 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component:HomeComponent
+    component: HomeComponent
   },
   {
     path: 'courses',
-    component:CoursesComponent
+    component: CoursesComponent
   },
   {
     path: 'login',
-    component:LoginComponent
+    component: LoginComponent
   },
   {
     path: 'about',
-    component:AboutComponent
+    component: AboutComponent
   }
 ];
 
@@ -28,5 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule {}

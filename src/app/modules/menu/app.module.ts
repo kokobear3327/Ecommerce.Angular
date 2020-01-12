@@ -1,7 +1,7 @@
 import { AppRoutingModule } from './../../app-routing.module';
 import { NgModule } from '@angular/core';
 import { MenuTopComponent } from './components/menu-top/menu-top.component';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [MenuTopComponent],
@@ -10,5 +10,4 @@ import { CommonModule } from '@angular/common';
   providers: [],
   bootstrap: []
 })
-
-export class AppModuleMenu { }
+export class AppModuleMenu {}

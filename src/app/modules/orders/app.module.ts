@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [],
   imports: [],
+  exports: [],
   providers: [],
   bootstrap: []
 })
-export class AppModuleAdmin {}
+export class AppModuleOrder {}

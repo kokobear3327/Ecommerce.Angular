@@ -7,5 +7,4 @@ import { LoginComponent } from './components/login/login.component';
   providers: [],
   bootstrap: []
 })
-
-export class AppModuleAuth { }
+export class AppModuleAuth {}
