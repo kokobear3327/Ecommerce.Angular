@@ -1,3 +1,4 @@
+import { AppModuleOrder } from './modules/orders/app.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -25,6 +26,7 @@ import { AppModuleMenu } from './modules/menu/app.module';
     AppModuleAuth,
     AppModuleCommun,
     AppModuleCourses,
+    AppModuleOrder,
     AppModuleMenu
   ],
   providers: [],

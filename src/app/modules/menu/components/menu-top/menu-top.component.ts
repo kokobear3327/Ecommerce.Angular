@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-top.component.scss']
 })
 export class MenuTopComponent implements OnInit {
+  user: firebase.User;
   constructor(private login: LoginService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.login.getCurrentUser().subscribe(user => (this.user = user));
+  }
 
   logout() {
     this.login.logoutWithGoogle();

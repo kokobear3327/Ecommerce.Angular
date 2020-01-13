@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
+import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [OrdersComponent],
   imports: [],
-  exports: [],
+  exports: [OrdersComponent],
   providers: [],
   bootstrap: []
 })
