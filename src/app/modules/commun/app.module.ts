@@ -8,5 +8,4 @@ import { AboutComponent } from './components/about/about.component';
   providers: [],
   bootstrap: []
 })
-
-export class AppModuleCommun { }
+export class AppModuleCommun {}

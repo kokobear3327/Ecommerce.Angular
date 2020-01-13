@@ -8,5 +8,4 @@ import { CoursesComponent } from './components/courses/courses.component';
   providers: [],
   bootstrap: []
 })
-
-export class AppModuleCourses { }
+export class AppModuleCourses {}

@@ -12,6 +12,9 @@ export class AppComponent implements OnInit {
   constructor(private db: AngularFireDatabase) {}
 
   ngOnInit() {
-    this.db.list('/courses').valueChanges().subscribe(courses=>console.log(courses));
+    this.db
+      .list('/courses')
+      .valueChanges()
+      .subscribe(courses => console.log(courses));
   }
 }
