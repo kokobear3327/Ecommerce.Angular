@@ -1,4 +1,3 @@
-import { AdminCoursesComponent } from './modules/admin/components/admin-courses/admin-courses/admin-courses.component';
 import { OrdersComponent } from './modules/orders/components/orders/orders.component';
 import { AboutComponent } from './modules/commun/components/about/about.component';
 import { LoginComponent } from './modules/authen/components/login/login.component';
@@ -28,11 +27,6 @@ const routes: Routes = [
   {
     path: 'orders',
     component: OrdersComponent,
-    canActivate: [LoginService]
-  },
-  {
-    path: 'admin-courses',
-    component: AdminCoursesComponent,
     canActivate: [LoginService]
   }
 ];

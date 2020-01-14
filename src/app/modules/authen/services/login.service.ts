@@ -1,3 +1,4 @@
+import { UserService } from './../../users/services/user.service';
 import { CanActivate, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
@@ -11,8 +12,14 @@ import { Observable } from 'rxjs';
 
 /* ToDo: facebook, twitter, user/pass login */
 export class LoginService implements CanActivate {
-  constructor(private login: AngularFireAuth, private router: Router) {
-    this.login.authState.subscribe(user => console.log(user));
+  constructor(
+    private login: AngularFireAuth,
+    private router: Router,
+    private serviceUser: UserService
+  ) {
+    this.login.authState.subscribe(user => {
+      this.serviceUser.saveUser(user);
+    });
   }
 
   loginWithGoogle() {
