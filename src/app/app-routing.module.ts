@@ -1,3 +1,4 @@
+import { ShoppingCartComponent } from './modules/shoppingCart/components/shopping-cart/shopping-cart.component';
 import { OrdersComponent } from './modules/orders/components/orders/orders.component';
 import { AboutComponent } from './modules/commun/components/about/about.component';
 import { LoginComponent } from './modules/authen/components/login/login.component';
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path: 'orders',
     component: OrdersComponent,
+    canActivate: [LoginService]
+  },
+  {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent,
     canActivate: [LoginService]
   }
 ];

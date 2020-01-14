@@ -16,7 +16,18 @@
         <h5 class="card-title">Here are the courses</h5>
         <div *ngFor="let course of courses" class="card-text">
           <h1>{{ course.title }}</h1>
-          <button (click)="addToCart(course)">Add to cart</button>
+          <button
+            *ngIf="!existCourseInShoppingCart(course.key)"
+            (click)="addToCart(course)"
+          >
+            Add to cart
+          </button>
+          <button
+            *ngIf="existCourseInShoppingCart(course.key)"
+            (click)="deleteFromCart(course)"
+          >
+            Delete from cart
+          </button>
           <div>{{ course.description }}</div>
           <span fxLayloutAlign="center center" class="price"
             >{{ course.price | currency }}
