@@ -13,6 +13,7 @@ import { AppModuleCommun } from './modules/commun/app.module';
 import { AppModuleCourses } from './modules/courses/app.module';
 import { AppModuleMenu } from './modules/menu/app.module';
 import { AppModuleUsers } from './modules/users/app.module';
+import { AppModuleShoppingCart } from './modules/shoppingCart/app.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { AppModuleUsers } from './modules/users/app.module';
     AppModuleCourses,
     AppModuleOrder,
     AppModuleUsers,
+    AppModuleShoppingCart,
     AppModuleMenu
   ],
   providers: [],
