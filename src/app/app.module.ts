@@ -8,11 +8,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
-import { AppModuleAdmin } from './modules/admin/app.module';
 import { AppModuleAuth } from './modules/authen/app.module';
 import { AppModuleCommun } from './modules/commun/app.module';
 import { AppModuleCourses } from './modules/courses/app.module';
 import { AppModuleMenu } from './modules/menu/app.module';
+import { AppModuleUsers } from './modules/users/app.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,11 +22,11 @@ import { AppModuleMenu } from './modules/menu/app.module';
     AngularFireModule.initializeApp(environment),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AppModuleAdmin,
     AppModuleAuth,
     AppModuleCommun,
     AppModuleCourses,
     AppModuleOrder,
+    AppModuleUsers,
     AppModuleMenu
   ],
   providers: [],
