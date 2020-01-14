@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './../../../shoppingCart/services/shopping-cart.service';
 import { CategoriesService } from './../../../commun/services/categories.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscriber, Subscription } from 'rxjs';
@@ -15,7 +16,8 @@ export class CoursesComponent implements OnInit {
 
   constructor(
     private serviceCategories: CategoriesService,
-    private serviceCourses: CourseService
+    private serviceCourses: CourseService,
+    private serviceShoppingCart: ShoppingCartService
   ) {}
 
   ngOnInit() {
@@ -31,8 +33,10 @@ export class CoursesComponent implements OnInit {
       .subscribe(([categories, courses]) => {
         this.categories = categories;
         this.courses = courses;
-        console.log(courses);
-        console.log(categories);
       });
+  }
+
+  addToCart(courses) {
+    this.serviceShoppingCart.addToCart(courses);
   }
 }
