@@ -2,10 +2,10 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" [routerLink]="'/'">Home</a>
+        <a class="nav-link active" routerLink="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'/courses'">Courses</a>
+        <a class="nav-link" routerLink="/courses">Courses</a>
       </li>
       <li *ngIf="user" class="nav-item dropdown">
         <a
@@ -18,10 +18,8 @@
           >Dropdown</a
         >
         <div class="dropdown-menu">
-          <a class="dropdown-item" [routerLink]="'/orders'">Orders</a>
-          <a class="dropdown-item" [routerLink]="'/admin-courses'"
-            >Admin courses</a
-          >
+          <a class="dropdown-item" routerLink="/orders">Orders</a>
+          <a class="dropdown-item" routerLink="/admin-courses">Admin courses</a>
           <a class="dropdown-item" (click)="logout()" href="#"
             >Logout {{ user.displayName }}</a
           >
@@ -33,20 +31,20 @@
         <a
           class="nav-link"
           *ngIf="!user"
-          [routerLink]="'/login'"
+          routerLink="/login"
           tabindex="-1"
           aria-disabled="true"
           >Login</a
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'/about'">About</a>
+        <a class="nav-link" routerLink="/about">About</a>
       </li>
       <li class="nav-item">
         <a
           (click)="recapShopping()"
           class="nav-link"
-          [routerLink]="'/shopping-cart'"
+          routerLink="/shopping-cart"
           >{{ nbrShoppingCourse }} Cart</a
         >
       </li>

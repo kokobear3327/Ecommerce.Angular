@@ -14,7 +14,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
   categories: any[];
   courses: any[];
   coursesShoppingCart: any[];
-  sub: Subscription;
+  subscription: Subscription;
 
   constructor(
     private serviceCategories: CategoriesService,
@@ -23,7 +23,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.sub = this.serviceCategories
+    this.subscription = this.serviceCategories
       .getAllCategories()
       .pipe(
         mergeMap(categories =>
@@ -52,7 +52,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
   addToCart(course) {

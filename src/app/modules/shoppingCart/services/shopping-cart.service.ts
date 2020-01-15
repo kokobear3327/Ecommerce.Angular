@@ -47,9 +47,9 @@ export class ShoppingCartService {
       .snapshotChanges()
       .pipe(
         map(courses =>
-          courses.map(c => ({
-            key: c.payload.key,
-            ...c.payload.val()
+          courses.map(courses => ({
+            key: courses.payload.key,
+            ...courses.payload.val()
           }))
         )
       );
