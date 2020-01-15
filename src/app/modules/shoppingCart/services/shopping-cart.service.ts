@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { take } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +33,25 @@ export class ShoppingCartService {
             .set(courseAdd.key, { course: courseAdd });
         }
       });
+  }
+
+  deleteFromCart(id: string) {
+    let cartId = localStorage.getItem('cartId');
+    return this.db.object(`/shoppingCart/${cartId}/items/${id}`).remove();
+  }
+
+  getListItemsShoppingCart() {
+    let cartId = localStorage.getItem('cartId');
+    return this.db
+      .list(`/shoppingCart/${cartId}/items/`)
+      .snapshotChanges()
+      .pipe(
+        map(courses =>
+          courses.map(c => ({
+            key: c.payload.key,
+            ...c.payload.val()
+          }))
+        )
+      );
   }
 }
