@@ -3,7 +3,7 @@ import { CanActivate, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -34,6 +34,21 @@ export class LoginService implements CanActivate {
 
   getCurrentUser() {
     return this.login.authState;
+  }
+
+  getCurrentUserDb() {
+    return this.login.authState.pipe(
+      switchMap(user => {
+        try {
+          return this.serviceUser.getUserByuid(user.uid);
+        } catch (error) {
+          console.log(error);
+        }
+      }),
+      map(user => {
+        return user;
+      })
+    );
   }
 
   canActivate(): Observable<boolean> {
